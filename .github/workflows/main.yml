@@ -44,4 +44,4 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_KEY }}
-          script: cd bumble-to-yandex && docker pull cr.yandex/$CR_REGISTRY/practicum-client:latest && docker pull cr.yandex/$CR_REGISTRY/practicum-server:latest && docker-compose up -d --no-deps app
+          script: cd bumble-to-yandex && docker pull cr.yandex/$CR_REGISTRY/practicum-client:latest && docker pull cr.yandex/$CR_REGISTRY/practicum-server:latest && docker-compose up -d --no-deps
