@@ -36,3 +36,10 @@ jobs:
           docker push cr.yandex/$CR_REGISTRY/practicum-client:latest
           docker tag practicum-server:latest cr.yandex/$CR_REGISTRY/practicum-server:latest
           docker push cr.yandex/$CR_REGISTRY/practicum-server:latest
+      - name: Connect to VPS and redeploy project with new image
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_KEY }}
+          script: git pull origin main && docker pull cr.yandex/$CR_REGISTRY/practicum-client:latest && docker pull cr.yandex/$CR_REGISTRY/practicum-server:latest && docker-compose up -d --no-deps app
