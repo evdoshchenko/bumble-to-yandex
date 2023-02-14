@@ -36,10 +36,6 @@ services:
       SERVER_PORT: ${SERVER_PORT}
     networks:
       - awesome
-    depends_on:
-      - postgres
-    command:
-      ./utils/wait-for.sh postgres:${POSTGRES_PORT} -- node /app/index.js 
 
   postgres:
     image: postgres:14   
