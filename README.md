@@ -1,3 +1,23 @@
+### Как собрать докеры?
+Версия в dev:
+```
+git clone https://github.com/evdoshchenko/bumble-to-yandex
+cd bumble
+git checkout dev
+yarn bootstrap
+Y
+yarn build
+yarn dev
+yarn docker:build
+```
+
+
+
+
+
+
+
+
 ###  Как собрать и запустить Сервер и БД в Docker?
 По умолчанию запуститься на localhost:5000
 ```
@@ -33,7 +53,7 @@ yarn dev
 ### Как начать разрабатывать в пустой папке с SSR
 Версия в dev:
 ```
-git clone https://github.com/wordrunners/bumble
+git clone https://github.com/evdoshchenko/bumble-to-yandex
 cd bumble
 git checkout dev
 yarn bootstrap
