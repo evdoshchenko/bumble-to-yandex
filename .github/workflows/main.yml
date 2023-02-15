@@ -25,14 +25,17 @@ jobs:
           CR_REPOSITORY: game.practicum.yandex.ru
           IMAGE_TAG: ${{ github.sha }}
           CLIENT_PORT: 3000
-          SERVER_PORT: 5000
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
           POSTGRES_PORT: 5432
+          SERVER_NAME: wordrunners-bumble-20.ya-praktikum.tech
+          SERVER_PORT: 5000
+          NGINX_IMAGE: cr.yandex/crpr86nohje7jd3nt11h/traffic-racer/nginx:${{ github.sha }}
+          SERVER_IMAGE: cr.yandex/crpr86nohje7jd3nt11h/traffic-racer/server:${{ github.sha }}
         run: |
           docker compose build
-          docker tag practicum-client:latest cr.yandex/$CR_REGISTRY/practicum-client:latest
-          docker push cr.yandex/$CR_REGISTRY/practicum-client:latest
-          docker tag practicum-server:latest cr.yandex/$CR_REGISTRY/practicum-server:latest
-          docker push cr.yandex/$CR_REGISTRY/practicum-server:latest
+          docker tag nginx:latest ${{env.NGINX_IMAGE}}
+          docker push ${{env.NGINX_IMAGE}}
+          docker tag server:latest ${{env.SERVER_IMAGE}}
+          docker push  ${{env.SERVER_IMAGE}}
