@@ -24,7 +24,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        format: 'cjs',
+        format: 'umd',
         entryFileNames: `assets/[name]-[hash].js`,
         assetFileNames: `assets/[name].[ext]`,
       },
