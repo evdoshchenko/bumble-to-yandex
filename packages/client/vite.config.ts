@@ -24,9 +24,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        format: 'iife',
-        entryFileNames: `assets/[name]-[hash].js`,
-        assetFileNames: `assets/[name].[ext]`,
+        format: 'umd',
+        dir: 'assets',
+        entryFileNames: `[name]-[hash].js`,
+        chunkFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`,
       },
     },
   },
