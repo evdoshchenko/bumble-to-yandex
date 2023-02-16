@@ -18,11 +18,14 @@ export default defineConfig({
       { find: /^@(?=\/)/, replacement: path.resolve(__dirname, './src') },
     ],
   },
+  css: {
+    devSourcemap: true,
+  },
   build: {
     rollupOptions: {
       output: {
-        entryFileNames: `assets/[name].js`, format: 'umd',
-        chunkFileNames: `assets/[name].js`,
+        format: 'iife',
+        entryFileNames: `assets/[name]-[hash].js`,
         assetFileNames: `assets/[name].[ext]`,
       },
     },
