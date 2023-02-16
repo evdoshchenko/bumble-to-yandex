@@ -25,8 +25,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         format: 'cjs',
-        entryFileNames: `/assets/[name]-[hash].js`,
-        assetFileNames: `/assets/[name].[ext]`,
+        entryFileNames: `assets/[name]-[hash].js`,
+        assetFileNames: `assets/[name].[ext]`,
       },
     },
   },
