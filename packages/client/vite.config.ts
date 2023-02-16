@@ -23,13 +23,9 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      input: {
-        app: './index.html',
-      },
       output: {
-        format: 'umd',
+        format: 'cjs',
         entryFileNames: `[name]-[hash].js`,
-        chunkFileNames: `[name].js`,
         assetFileNames: `[name].[ext]`,
       },
     },
