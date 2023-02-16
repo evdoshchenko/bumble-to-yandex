@@ -24,9 +24,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        format: 'umd',
         entryFileNames: `assets/[name]-[hash].js`,
-        assetFileNames: `assets/[name].[ext]`,
+        chunkFileNames: `assets/[name]-[hash].js`,
+        assetFileNames: `assets/[name]-[hash].[ext]`,
       },
     },
   },
